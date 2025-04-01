@@ -1,0 +1,66 @@
+{
+  "app": {
+    "title": "SoundWave",
+    "subtitle": "A Sound-Based Game",
+    "loading": "Loading...",
+    "selectCategory": "Select a category to start"
+  },
+  "game": {
+    "listenPrompt": "Listen to the sound and try to identify it...",
+    "maxReplayReached": "Maximum replays reached",
+    "answerTitle": "The Sound Was..."
+  },
+  "buttons": {
+    "replay": "Replay",
+    "reveal": "Reveal",
+    "settings": "Settings",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "categories": {
+    "games": "Games",
+    "animals": "Animals",
+    "industrial": "Industrial",
+    "environment": "Environment",
+    "homeOffice": "Home & Office",
+    "music": "Music"
+  },
+  "settings": {
+    "title": "Settings",
+    "maxReplays": "Maximum Replays",
+    "infinite": "Infinite",
+    "language": "Language",
+    "languageOptions": {
+      "en": "English",
+      "fr": "French",
+      "es": "Spanish (Coming Soon)"
+    }
+  },
+  "cms": {
+    "title": "Content Management",
+    "dashboard": "Dashboard",
+    "sounds": "Sounds",
+    "categories": "Categories",
+    "languages": "Languages",
+    "backToGame": "Back to Game"
+  },
+  "docs": {
+    "title": "Documentation",
+    "home": "Documentation Home",
+    "technicalSpec": "Technical Specification",
+    "codingRules": "Coding Rules",
+    "requirements": "Requirements Analysis",
+    "database": "Database Schema",
+    "deployment": "Deployment Workflow",
+    "backToGame": "Back to Game"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "notFound": "Not Found",
+    "copyright": "SoundWave - © {{year}}"
+  }
+}

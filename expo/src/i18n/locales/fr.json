@@ -1,0 +1,66 @@
+{
+  "app": {
+    "title": "SoundWave",
+    "subtitle": "Un Jeu Basé sur les Sons",
+    "loading": "Chargement...",
+    "selectCategory": "Sélectionnez une catégorie pour commencer"
+  },
+  "game": {
+    "listenPrompt": "Écoutez le son et essayez de l'identifier...",
+    "maxReplayReached": "Nombre maximum de répétitions atteint",
+    "answerTitle": "Le Son Était..."
+  },
+  "buttons": {
+    "replay": "Rejouer",
+    "reveal": "Révéler",
+    "settings": "Paramètres",
+    "back": "Retour",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "categories": {
+    "games": "Jeux",
+    "animals": "Animaux",
+    "industrial": "Industriel",
+    "environment": "Environnement",
+    "homeOffice": "Maison & Bureau",
+    "music": "Musique"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "maxReplays": "Nombre maximum de répétitions",
+    "infinite": "Infini",
+    "language": "Langue",
+    "languageOptions": {
+      "en": "Anglais",
+      "fr": "Français",
+      "es": "Espagnol (Bientôt disponible)"
+    }
+  },
+  "cms": {
+    "title": "Gestion de Contenu",
+    "dashboard": "Tableau de Bord",
+    "sounds": "Sons",
+    "categories": "Catégories",
+    "languages": "Langues",
+    "backToGame": "Retour au Jeu"
+  },
+  "docs": {
+    "title": "Documentation",
+    "home": "Accueil de la Documentation",
+    "technicalSpec": "Spécification Technique",
+    "codingRules": "Règles de Codage",
+    "requirements": "Analyse des Besoins",
+    "database": "Schéma de Base de Données",
+    "deployment": "Flux de Déploiement",
+    "backToGame": "Retour au Jeu"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "success": "Succès !",
+    "notFound": "Non Trouvé",
+    "copyright": "SoundWave - © {{year}}"
+  }
+}

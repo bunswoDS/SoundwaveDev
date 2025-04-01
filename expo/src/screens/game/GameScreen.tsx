@@ -7,7 +7,8 @@ import {
   Modal, 
   ImageBackground, 
   SafeAreaView,
-  StatusBar
+  StatusBar,
+  Alert
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { 
@@ -17,9 +18,11 @@ import {
   Dog, 
   Leaf, 
   Factory, 
-  Gamepad2 
+  Gamepad2,
+  WifiOff
 } from 'lucide-react-native';
 import { colors } from '../../utils/styles';
+import { checkNetworkConnection, monitorNetworkConnection } from '../../utils/network';
 
 const GameScreen: React.FC = () => {
   const { t } = useTranslation();
@@ -29,17 +32,21 @@ const GameScreen: React.FC = () => {
   const [maxReplays, setMaxReplays] = useState<number | null>(3); // null means infinite
   const [showAnswerModal, setShowAnswerModal] = useState<boolean>(false);
   const [showSettingsModal, setShowSettingsModal] = useState<boolean>(false);
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
+  const [isConnected, setIsConnected] = useState<boolean>(true);
+
+  // Debug log to help diagnose startup issues
+  useEffect(() => {
+    console.log('GameScreen mounted, initializing app...');
+    return () => console.log('GameScreen unmounted');
+  }, []);
 
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
     const loadSettings = async () => {
       try {
-        // In a real implementation, this would use AsyncStorage instead of localStorage
-        const savedMaxReplays = '3'; // Placeholder for AsyncStorage.getItem('maxReplays')
-        if (savedMaxReplays) {
-          // Type-safe comparison
-          setMaxReplays(savedMaxReplays.toString() === 'infinite' ? null : parseInt(savedMaxReplays, 10));
-        }
+        // Simplified to avoid network requests during initial load
+        setMaxReplays(3);
       } catch (error) {
         console.error('Failed to load settings:', error);
       }
@@ -47,6 +54,42 @@ const GameScreen: React.FC = () => {
     
     loadSettings();
   }, []);
+  
+  // Preload the background image
+  useEffect(() => {
+    // Simulate image preloading
+    setIsImageLoaded(true);
+  }, []);
+  
+  // Monitor network connectivity
+  useEffect(() => {
+    // Check initial connection state
+    checkNetworkConnection().then(connected => {
+      setIsConnected(connected);
+    });
+    
+    // Set up network state listener
+    const unsubscribe = monitorNetworkConnection(
+      () => {
+        setIsConnected(true);
+        console.log('Network connection restored');
+      },
+      () => {
+        setIsConnected(false);
+        console.log('Network connection lost');
+        Alert.alert(
+          t('common.error'),
+          t('common.networkError'),
+          [{ text: 'OK' }]
+        );
+      }
+    );
+    
+    // Clean up listener on unmount
+    return () => {
+      unsubscribe();
+    };
+  }, [t]);
 
   // Categories with custom icons for grid layout
   const categories = [

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Navigation from './src/navigation';
 import './src/i18n'; // Import i18n configuration
 import ErrorBoundary from './src/components/ErrorBoundary';
@@ -8,8 +9,10 @@ import ErrorBoundary from './src/components/ErrorBoundary';
 export default function App() {
   return (
     <ErrorBoundary>
-      <StatusBar style="light" />
-      <Navigation />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <StatusBar style="light" />
+        <Navigation />
+      </GestureHandlerRootView>
     </ErrorBoundary>
   );
 }

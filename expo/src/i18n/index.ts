@@ -1,6 +1,7 @@
 import * as Localization from 'expo-localization';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import 'intl-pluralrules'; // Add polyfill for Intl.PluralRules
 
 // Import localization files
 import enTranslation from './locales/en.json';

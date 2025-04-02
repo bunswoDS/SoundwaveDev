@@ -29,9 +29,6 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-      "eas": {
-        "projectId": "soundwave-app"
-      }
     },
     "owner": "bunswo"
   }

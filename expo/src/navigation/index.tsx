@@ -59,19 +59,24 @@ const MainTabs = () => {
 
 // Root navigator
 const Navigation = () => {
-  return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen 
-            name="Main" 
-            component={MainTabs} 
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
-  );
+  try {
+    return (
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen 
+              name="Main" 
+              component={MainTabs} 
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+    );
+  } catch (error) {
+    console.warn('Navigation error:', error);
+    return null;
+  }
 };
 
 export default Navigation;

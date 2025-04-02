@@ -29,6 +29,9 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
+      "eas": {
+        "projectId": "46d92f2f-756d-4468-9d4d-d3ec8d06b204"
+      }
     },
     "owner": "bunswo"
   }

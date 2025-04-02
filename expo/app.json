@@ -30,8 +30,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "soundwave-project"
+        "projectId": "soundwave-app"
       }
-    }
+    },
+    "owner": "bunswo"
   }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, Platform } from 'react-native';
 import Navigation from './src/navigation';
-import './src/i18n'; // Import i18n configuration
+import i18n from './src/i18n'; // Import i18n configuration
 import ErrorBoundary from './src/components/ErrorBoundary';
 import GestureHandlerWrapper from './src/components/GestureHandlerWrapper';
 

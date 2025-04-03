@@ -40,7 +40,14 @@
   },
   "cms": {
     "title": "Gestion de Contenu",
-    "dashboard": "Tableau de Bord",
+    "dashboard": {
+      "title": "Tableau de Bord de Gestion",
+      "subtitle": "Gérez le contenu de votre jeu sonore",
+      "sounds": "Sons",
+      "categories": "Catégories",
+      "languages": "Langues",
+      "settings": "Paramètres"
+    },
     "sounds": "Sons",
     "categories": "Catégories",
     "languages": "Langues",

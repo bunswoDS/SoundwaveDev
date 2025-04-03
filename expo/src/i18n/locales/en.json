@@ -40,7 +40,14 @@
   },
   "cms": {
     "title": "Content Management",
-    "dashboard": "Dashboard",
+    "dashboard": {
+      "title": "Content Management Dashboard",
+      "subtitle": "Manage your sound game content",
+      "sounds": "Sounds",
+      "categories": "Categories",
+      "languages": "Languages",
+      "settings": "Settings"
+    },
     "sounds": "Sounds",
     "categories": "Categories",
     "languages": "Languages",

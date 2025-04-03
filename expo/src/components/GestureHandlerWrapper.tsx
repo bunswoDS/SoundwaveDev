@@ -8,8 +8,8 @@ interface GestureHandlerWrapperProps {
 }
 
 /**
- * Component that only uses GestureHandlerRootView on native platforms
- * to avoid errors in Expo Go with SDK 52
+ * Component that safely wraps content with GestureHandlerRootView
+ * with proper error handling for Expo SDK 52
  */
 export default function GestureHandlerWrapper({ children, style }: GestureHandlerWrapperProps) {
   // Use regular View on web to avoid gesture handler initialization issues
@@ -17,11 +17,12 @@ export default function GestureHandlerWrapper({ children, style }: GestureHandle
     return <View style={style}>{children}</View>;
   }
 
-  // On native platforms, use GestureHandlerRootView with error handling
-  try {
-    return <GestureHandlerRootView style={style}>{children}</GestureHandlerRootView>;
-  } catch (error) {
-    console.warn('Failed to render GestureHandlerRootView:', error);
-    return <View style={style}>{children}</View>;
-  }
+  // On native platforms, use GestureHandlerRootView with safe rendering
+  return (
+    <View style={style}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        {children}
+      </GestureHandlerRootView>
+    </View>
+  );
 }

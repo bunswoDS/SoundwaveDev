@@ -2,22 +2,54 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Settings as SettingsIcon, Home as HomeIcon } from 'lucide-react-native';
+import { 
+  Settings as SettingsIcon, 
+  Home as HomeIcon,
+  Database as CMSIcon
+} from 'lucide-react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // Import screens
 import GameScreen from '../screens/game/GameScreen';
 import SettingsScreen from '../screens/settings/SettingsScreen';
+import { 
+  CMSDashboardScreen,
+  CategoriesManagementScreen,
+  LanguagesManagementScreen,
+  SoundsManagementScreen
+} from '../screens/cms';
 
 // Define stack navigator param list
 export type RootStackParamList = {
   Main: undefined;
   Settings: undefined;
+  CMS: undefined;
+  CMSDashboard: undefined;
+  CategoriesManagement: undefined;
+  LanguagesManagement: undefined;
+  SoundsManagement: undefined;
 };
 
 // Create navigators
 const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
+const CMSStack = createStackNavigator<RootStackParamList>();
+
+// CMS stack navigator
+const CMSNavigator = () => {
+  return (
+    <CMSStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <CMSStack.Screen name="CMSDashboard" component={CMSDashboardScreen} />
+      <CMSStack.Screen name="CategoriesManagement" component={CategoriesManagementScreen} />
+      <CMSStack.Screen name="LanguagesManagement" component={LanguagesManagementScreen} />
+      <CMSStack.Screen name="SoundsManagement" component={SoundsManagementScreen} />
+    </CMSStack.Navigator>
+  );
+};
 
 // Main tab navigator
 const MainTabs = () => {
@@ -50,6 +82,16 @@ const MainTabs = () => {
           tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
             <SettingsIcon color={color} size={size} />
+          ),
+        }} 
+      />
+      <Tab.Screen 
+        name="CMS" 
+        component={CMSNavigator}
+        options={{
+          tabBarLabel: 'CMS',
+          tabBarIcon: ({ color, size }) => (
+            <CMSIcon color={color} size={size} />
           ),
         }} 
       />

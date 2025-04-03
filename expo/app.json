@@ -33,6 +33,12 @@
         "projectId": "46d92f2f-756d-4468-9d4d-d3ec8d06b204"
       }
     },
-    "owner": "bunswo"
+    "owner": "bunswo",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/46d92f2f-756d-4468-9d4d-d3ec8d06b204"
+    }
   }
 }
